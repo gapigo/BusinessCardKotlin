@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import com.gapigo.businesscard.App
 import com.gapigo.businesscard.R
 import com.gapigo.businesscard.databinding.ActivityMainBinding
+import com.gapigo.businesscard.util.Image
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,6 +32,8 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, AddBusinessCardActivity::class.java)
             startActivity(intent)
         }
+
+        adapter.listenerShare = {card -> Image.share(this@MainActivity, card)}
     }
 
     private fun getAllBusinessCard() {
